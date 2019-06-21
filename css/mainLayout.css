@@ -1,0 +1,536 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: '';
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+body {
+    font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: #4b0f31;
+    background-color: #f1e5e6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    outline: none;
+    color: #d3394c;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #722040;
+}
+
+.hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+
+/* Header */
+
+.header {
+    padding: 2em 1em 4em;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0.5em 0 0;
+    letter-spacing: -1px;
+    font-size: 3em;
+    line-height: 1;
+}
+
+.header h1 span {
+    display: block;
+    padding: 0.5em 0 1em;
+    color: #999;
+    font-weight: normal;
+    font-size: 0.45em;
+}
+
+/* Content */
+
+.content {
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.uploadButtonContainer {
+    padding: 20px;
+}
+
+.content footer {
+    color: #b39295;
+    margin-top: 40px;
+}
+
+.content footer a:hover,
+.content footer a:focus {
+    color: #4b0f31;
+}
+
+.box {
+    background-color: #dfc8ca;
+    padding: 1.25rem 1.25rem;
+}
+
+.box + .box {
+    margin-top: 2.5rem;
+}
+
+
+/* Related demos */
+
+.content--related {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 4em;
+}
+
+.media-item {
+    display: inline-block;
+    padding: 1em;
+    vertical-align: top;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.media-item__img {
+    max-width: 100%;
+    opacity: 0.6;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.media-item:hover .media-item__img,
+.media-item:focus .media-item__img {
+    opacity: 1;
+}
+
+.media-item__title {
+    margin: 0;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+@media screen and (max-width: 50em) {
+    .header {
+        padding: 3em 10% 4em;
+    }
+}
+
+@media screen and (max-width: 40em) {
+    .header h1 {
+        font-size: 2.8em;
+    }
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    padding: 0 0 0 20px;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+    font-size: 80%;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    outline: 0;
+}
+
+.inputfile + label {
+    width: 100%;
+    padding: 0 20px;
+    height: 68px;
+    border-radius: 500px;
+    border: #b03f25 2px solid;
+    max-width: 100%;
+    font-size: 20px;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: table-cell !important;
+    vertical-align: middle;
+    overflow: hidden;
+    outline: 0;
+}
+
+.inputFileLabelContent {
+    display: inline-block;
+    outline: 0;
+    white-space: pre-wrap;
+}
+
+.no-js .inputfile + label {
+    display: none;
+    outline: 0;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+    outline: none;
+}
+
+.inputfile + label svg {
+    display: inline-block;
+    fill: currentColor;
+    margin-right: 0.25em;
+    /* 4px */
+    outline: none;
+}
+
+.inputfile-1 + label {
+    display: inline-block;
+    vertical-align: middle;
+    color: #ffffff;
+    background-color: #f16000;
+    outline: 0;
+}
+
+.inputfile-1:focus + label,
+.inputfile-1.has-focus + label,
+.inputfile-1 + label:hover {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #b03f25;
+    outline: 0;
+}
+
+.uploadButtonContainer {
+    width: 100%;
+    display: table;
+    text-align: center;
+    outline: 0;
+}
+
+.selectButtons {
+    display: none;
+}
+
+
+ul.categories {
+    list-style: none;
+    padding: 20px;
+}
+
+ul.categories li {
+    display: inline;
+    cursor: pointer;
+}
+
+ul.categories li label {
+    display: block;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #000000;
+    border-radius: 100px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.categories li label {
+    padding: 8px 12px 8px 8px;
+    cursor: pointer;
+}
+
+ul.categories li input[type="checkbox"]:checked + label {
+    border: 2px solid #f16000;
+    background-color: #f16000;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.categories li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    display: none;
+}
+
+ul.categories li input[type="button"] + label {
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+    cursor: default;
+}
+
+ul.categories li input[type="button"]:hover + label {
+    border: #f16000 2px solid;
+}
+
+ul.categories li input[type="button"]:active + label {
+    background-color: #f16000;
+}
+
+.checkboxIcon {
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.checkboxLabel {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 7px;
+}
+
+@media (min-width: 800px) {
+    ul.categories li label {
+        display: inline-block;
+    }
+
+    ul.categories li input[type="checkbox"]:hover + label {
+        border: 2px solid #b03f25;
+    }
+
+    ul.categories li input[type="button"] + label {
+        cursor: pointer;
+    }
+
+    .uploadButtonContainer {
+        text-align: left;
+    }
+
+    .inputfile + label {
+        width: auto;
+        font-size: 1.25rem;
+        /* 20px */
+        height: 68px;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        display: table-cell;
+        overflow: hidden;
+        padding: 0 20px;
+        /* 10px 20px */
+    }
+
+    .uploadButtonContainer {
+        display: inline-block;
+    }
+
+    .content {
+        padding: 0 0 48px 0;
+    }
+
+    .inputFileLabelContent {
+        display: inline-block;
+        outline: 0;
+        max-width: 644px;
+        white-space: nowrap;
+    }
+
+}
