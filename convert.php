@@ -50,126 +50,63 @@ try {
         <visibility>1</visibility>
         <open>1</open>
         
-                <Style id="red">
-            <LineStyle>
-            <color>C81400FF</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_red">
-            <LineStyle>
-            <color>961400FF</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="green">
-            <LineStyle>
-            <color>C878FF00</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_green">
-            <LineStyle>
-            <color>9678FF00</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="blue">
-            <LineStyle>
-            <color>C8FF7800</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_blue">
-            <LineStyle>
-            <color>96FF7800</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="cyan">
-            <LineStyle>
-            <color>C8F0FF14</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_cyan">
-            <LineStyle>
-            <color>96F0FF14</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="orange">
-            <LineStyle>
-            <color>C81478FF</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_orange">
-            <LineStyle>
-            <color>961478FF</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="dark_green">
-            <LineStyle>
-            <color>C8008C14</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_dark_green">
-            <LineStyle>
-            <color>96008C14</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="purple">
-            <LineStyle>
-            <color>C8FF7878</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_purple">
-            <LineStyle>
-            <color>96FF7878</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="pink">
-            <LineStyle>
-            <color>C8A078F0</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_pink">
-            <LineStyle>
-            <color>96A078F0</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="brown">
-            <LineStyle>
-            <color>C8143C96</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_brown">
-            <LineStyle>
-            <color>96143C96</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-                <Style id="dark_blue">
-            <LineStyle>
-            <color>C8F01414</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
-        <Style id="route_dark_blue">
-            <LineStyle>
-            <color>96F01414</color>
-            <width>4</width>
-            </LineStyle>
-        </Style>
+                <Style id="placemark-red">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-red.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="placemark-blue">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-blue.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="placemark-purple">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-purple.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="placemark-yellow">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-yellow.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="placemark-pink">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-pink.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="placemark-brown">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-brown.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="placemark-green">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-green.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="placemark-orange">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.me/placemarks/placemark-orange.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+
         
                 
         <Folder>
