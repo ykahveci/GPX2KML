@@ -37,7 +37,7 @@ try {
 <kml xmlns="http://www.opengis.net/kml/2.2"  xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"    
      xmlns:atom="http://www.w3.org/2005/Atom">
     <Document>
-        <name><![CDATA[' . $_FILES['file']['name'] . ']]></name>
+        <name><![CDATA[' . str_replace(".gpx", "", $_FILES['file']['name']) . ']]></name>
         
                                 <atom:link href="http://iOverlander.com"/>
             
@@ -50,7 +50,7 @@ try {
         <visibility>1</visibility>
         <open>1</open>
         
-                <Style id="placemark-red">
+  <Style id="placemark-red">
     <IconStyle>
       <Icon>
         <href>http://maps.me/placemarks/placemark-red.png</href>
@@ -119,28 +119,33 @@ try {
             ';
 
         foreach ($index['WPT'] as $WPTId) {
+            unset($ele);
             if ($values[$WPTId]['type'] === "open" && $values[$WPTId]['level'] === 2) {
                 $convert = true;
                 $forSearchIndex = $WPTId + 1;
                 for ($forSearchInterrupt = false; !$forSearchInterrupt; $forSearchIndex++) {
                     if ($values[$forSearchIndex]['tag'] === "NAME" && $values[$forSearchIndex]['type'] === "complete") {
-                        $name = $values[$forSearchIndex]['value'];
+                        $name = str_replace("&", "&amp;", $values[$forSearchIndex]['value']);
+                        $name = str_replace("\"", "&quot;", $name);
                     } elseif ($values[$forSearchIndex]['tag'] === "ELE" && $values[$forSearchIndex]['type'] === "complete") {
                         $ele = $values[$forSearchIndex]['value'];
                     } elseif ($values[$forSearchIndex]['tag'] === "DESC" && $values[$forSearchIndex]['type'] === "complete") {
-                        $desc = $values[$forSearchIndex]['value'];
+                        $desc = str_replace("&", "&amp;", $values[$forSearchIndex]['value']);
+                        $desc = str_replace("\"", "&quot;", $desc);
+                        $desc = str_replace("<", "&lt;", $desc);
+                        $desc = str_replace(">", "&gt;", $desc);
                     } elseif ($values[$forSearchIndex]['tag'] === "LINK" && $values[$forSearchIndex]['type'] === "open") {
                         $link = $values[$forSearchIndex]['attributes']['HREF'];
                     } elseif ($values[$forSearchIndex]['tag'] === "TYPE" && $values[$forSearchIndex]['type'] === "complete") {
                         $type = $values[$forSearchIndex]['value'];
-                    } elseif ($values[$forSearchIndex]['tag'] === "ELE" && $values[$forSearchIndex]['type'] === "complete") {
-                        $ele = $values[$forSearchIndex]['value'];
                     } elseif ($values[$forSearchIndex]['type'] === "close" && $values[$forSearchIndex]['tag'] === "WPT") {
                         $forSearchInterrupt = true;
 
                     }
                 }
 
+
+                //debugging: auskommentiert, fehler sollte nicht hier sein
                 if ($type == "iOverlander Established Campground" || $type == "iOverlander Informal Campsite" || $type == "iOverlander Wild Camping") {
                     $color = "<styleUrl>#placemark-green</styleUrl>";
                 } elseif ($type == "iOverlander Hotel" || $type == "iOverlander Hostel") {
@@ -177,12 +182,13 @@ try {
                     $content = $content . '<Placemark>
                 <name>' . $name . '</name>                      
                 <visibility>1</visibility>            
-                <open>0</open>                        
+                <open>0</open>                      
+                '. $color .'
                                 
                 <atom:link href="' . $link . '"/>
                                                 
                 <description>
-                - ' . $desc . '  </description>       
+                - ' . $desc . '   </description>       
                 <LookAt>
                     <longitude>' . $values[$WPTId]['attributes']['LON'] . '</longitude>
                     <latitude>' . $values[$WPTId]['attributes']['LAT'] . '</latitude>
@@ -192,11 +198,11 @@ try {
                 </LookAt>
                 <Point>
                     <coordinates>
-                        ' . $values[$WPTId]['attributes']['LON'] . "," . $values[$WPTId]['attributes']['LAT'] . ',' . $ele . '                        
+                        ' . $values[$WPTId]['attributes']['LON'] . "," . $values[$WPTId]['attributes']['LAT']; if(isset($ele)) {$content = $content . ',' . $ele;} $content = $content . '                        
                     </coordinates>
                 </Point>
             </Placemark>
-            
+                                                                                   
             ';
 
                 }
@@ -207,18 +213,6 @@ try {
         $content = $content . '
 
         </Folder>
-         
-
-
-        <LookAt>
-            <longitude>57.51671</longitude>            
-            <latitude>-20.24971</latitude>             
-            <altitude>0</altitude>               
-            <heading>0</heading>               
-            <tilt>45</tilt>
-            <range>5456</range>                    
-            <altitudeMode>clampToGround</altitudeMode> 
-        </LookAt>
     </Document>
 </kml>';
 
