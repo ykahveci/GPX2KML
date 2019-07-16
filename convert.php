@@ -129,7 +129,7 @@ try {
                         $name = str_replace("\"", "&quot;", $name);
                     } elseif ($values[$forSearchIndex]['tag'] === "ELE" && $values[$forSearchIndex]['type'] === "complete") {
                         $ele = $values[$forSearchIndex]['value'];
-                    } elseif ($values[$forSearchIndex]['tag'] === "DESC" && $values[$forSearchIndex]['type'] === "complete") {
+                    } elseif ($values[$forSearchIndex]['tag'] === "CMT" && $values[$forSearchIndex]['type'] === "complete") {
                         $desc = str_replace("&", "&amp;", $values[$forSearchIndex]['value']);
                         $desc = str_replace("\"", "&quot;", $desc);
                         $desc = str_replace("<", "&lt;", $desc);
